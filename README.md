@@ -10,13 +10,18 @@ station wlan0 connect <имя сети>
 ```
 и ввести пароль
 
+затем надо порыться в настройках pacman
 
+```
+sudo nano /etc/pacman.conf
+```
+в этом файле рекоменую раскоментить: цвета, паралельные загрузки и мультилиб
 
-далее начинаем устанвоку через 
+далее начинаем установку через 
 ```
 archinstall
 ```
-в additiona packages надо добавить git
+в additional packages надо добавить git и flatpak
 далее после установки и ребута
 ```
 nmcli device wifi connect <имя-сети> password <пароль>
