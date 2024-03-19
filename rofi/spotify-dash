@@ -1,0 +1,33 @@
+#!/bin/sh
+
+roficonfig=~/.config/rofi/spotify-dash.rasi
+
+
+while true; do
+  while true; do
+    status=$(~/.config/rofi/dbus-spotify status)
+    image=$(wget -q --output-document=/tmp/spotify-art.jpg $(dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'Metadata'|egrep -A 1 "artUrl"|cut -b 44-|cut -d '"' -f 1|egrep -v ^$) 2> /dev/null)]
+    break
+  done
+  summary_play=$(~/.config/rofi/dbus-spotify summary | cut -d ':' -f2)
+  status=$(~/.config/rofi/dbus-spotify status)
+  [ "$status" = "Playing" ] && icon="⏸"
+  [ "$status" = "Paused" ] && icon="⏵"
+  prev_track="≪"
+  next_track="≫"
+  options=$(printf " $prev_track\n $icon\n $next_track"| rofi -config $roficonfig -dmenu -selected-row "$prev" -i -p " $summary_play")
+  if [ "$options" = " $prev_track" ]; then
+    ~/.config/rofi/dbus-spotify prev
+    prev=0
+
+  elif [ "$options" = " $next_track" ]; then
+    ~/.config/rofi/dbus-spotify next
+    prev=2
+  elif [ "$options" = " $icon" ]; then
+    ~/.config/rofi/dbus-spotify playpause
+    prev=1
+  else
+    break
+  fi
+  sleep 0.1
+done

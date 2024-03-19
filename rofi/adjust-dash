@@ -1,0 +1,29 @@
+#!/bin/sh
+
+roficonfig=~/.config/rofi/adjust-dash.rasi
+
+while true; do
+  brightness=$(light -G|cut -d '.' -f1)
+  plus_brightness="🌖"
+  minus_brightness="🌘"
+
+  volume=$(amixer get Master | cut -s -d '[' -f2 | cut -d '%' -f1 | head -n 1)
+  plus_volume="+"
+  minus_volume="-"
+  options=$(printf " $minus_brightness\n $minus_volume\n$brightness\n$volume%%\n $plus_brightness\n $plus_volume"| rofi -config $roficonfig -dmenu -selected-row "$prev")
+  if [ "$options" = " $minus_brightness" ]; then
+    light -U 10
+    prev=0
+  elif [ "$options" = " $plus_brightness" ]; then
+    light -A 10
+    prev=4
+  elif [ "$options" = " $minus_volume" ]; then
+    amixer set Master 5%- unmute
+    prev=1
+  elif [ "$options" = " $plus_volume" ]; then
+    amixer set Master 5%+ unmute
+    prev=5
+  else
+    break
+  fi
+done

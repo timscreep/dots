@@ -1,0 +1,22 @@
+
+configuration {
+  font: "Jetbrains Mono 14";
+}
+
+*{
+    foreground: #f8f8f2;
+    background-color: #282a36;
+    active-background: #44475A;
+    urgent-background: #ff5555;
+    urgent-foreground: #282a36;
+    selected-background: @active-background;
+    selected-urgent-background: @urgent-background;
+    selected-active-background: @active-background;
+    separatorcolor: @active-background;
+    bordercolor: #935189;
+    bg: @background-color;
+    text-color: @foreground;
+    fg: @foreground;
+    bgAlt: @selected-background;
+    button: @foreground;
+}

@@ -1,0 +1,51 @@
+#!/bin/sh
+
+# Inspired by author	Niraj
+# github	niraj998
+
+# Save Screenshots here
+screenshotdir=~/Pictures/Screenshots
+# file name
+file=$screenshotdir/$(date '+%y%m%d-%H%M-%S').png
+# rofi config
+roficonfig=~/.config/rofi/screenshot.rasi
+#make sure you have directory
+[ -d "$screenshotdir" ] || mkdir -pv "$screenshotdir"
+
+# ┬─┐┌─┐┌─┐┬
+# ├┬┘│ │├┤ │
+# ┴└─└─┘└  ┴
+
+area="Area"
+delay="Delay"
+full="Full"
+copy="Copy"
+save="Save"
+exit="Exit"
+
+screenshot_type=$(printf "$area\n$delay\n$full" | rofi -config $roficonfig -dmenu -i )
+screenshot_action=$(printf "$copy\n$save\n$exit" | rofi -config $roficonfig -dmenu -i )
+
+case $screenshot_type in
+	"$area")
+	if [ "$screenshot_action" = "$copy" ]; then
+	maim -s | xclip -selection clipboard -t image/png
+  elif [ "$screenshot_action" = "$save" ]; then
+	maim -s $file
+	fi
+	;;
+	"$delay")
+	if [ "$screenshot_action" = "$copy" ]; then
+	maim -d 5 | xclip -selection clipboard -t image/png
+	elif [ "$screenshot_action" = "$save" ]; then
+	maim -d 5 $file
+	fi
+	;;
+	"$full")
+	if [ "$screenshot_action" = "$copy" ]; then
+	maim -d 1| xclip -selection clipboard -t image/png
+  elif [ "$screenshot_action" = "$save" ]; then
+	maim $file
+	fi
+	;;
+esac

@@ -1,0 +1,113 @@
+*{
+    font: "Jetbrains Mono 12";
+    foreground: #d6acff;
+    background-color: #282a36;
+    active-background: #44475A;
+    urgent-background: #ff5555;
+    urgent-foreground: #282a36;
+    selected-background: @active-background;
+    selected-urgent-background: @urgent-background;
+    selected-active-background: @active-background;
+    separatorcolor: @active-background;
+    bordercolor: #935189;
+    spotify: #25d865;
+}
+
+
+#window {
+  width:		  320 px;
+  height:		  320 px;
+  x-offset: -10px;
+  y-offset: 0px;
+  location: east;
+  border:           2;
+  border-radius:    6;
+  border-color:     @foreground;
+  background-image: url("/tmp/spotify-art.jpg", both);
+
+}
+
+#mainbox { children: [ inputbar, dummy, listview];
+background-color: transparent;
+
+}
+
+#inputbar {
+  children:		[ prompt ];
+  padding:		10px 10px 10px 10px;
+  vertical-align: 0.5;
+
+  background-color: transparent;
+  border-color:     @foreground;
+}
+
+#prompt {
+  enabled: true;
+  expand:true;
+  text-color: @spotify;
+  background-color:	@background-color;
+  padding:		10px;
+  border-radius:	15px;
+  horizontal-align: 0;
+}
+
+#dummy{
+expand:true;
+background-color: transparent;
+}
+#listview {
+    children:		[element];
+    layout:     horizontal;
+    columns:3;
+    fixed-height:                true;
+    fixed-columns:               true;
+    fixed-height:                true;
+    border: false;
+    scrollbar: false;
+    background-color: transparent;
+    expand: false;
+
+}
+
+#dummy-1{
+expand:true;
+}
+#element {
+  padding: 20px;
+  width: 100px;
+  background-color: transparent;
+  expand: false;
+}
+
+#element-text {
+  expand: true;
+  background-color:            transparent;
+  text-color:                  @spotify;
+  highlight:                   inherit;
+  cursor:                      inherit;
+  vertical-align:              0.5;
+  horizontal-align:            0.5;
+  border: false;
+
+
+}
+#element.normal.normal {
+    background-color: transparent;
+    text-color:       @foreground;
+    cursor:                      pointer;
+
+}
+
+
+#element.selected.normal {
+    background-color: transparent;
+    text-color:       @foreground;
+    border-color: @spotify;
+    border: 2;
+    border-radius:	10px;
+}
+
+#element.alternate.normal {
+    background-color: @transparent;
+    text-color:       @foreground;
+}

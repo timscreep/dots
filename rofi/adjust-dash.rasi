@@ -1,0 +1,78 @@
+*{
+    font: "Jetbrains Mono 12";
+    foreground: #f8f8f2;
+    background-color: #282a36;
+    active-background: #44475A;
+    urgent-background: #ff5555;
+    urgent-foreground: #282a36;
+    selected-background: @active-background;
+    selected-urgent-background: @urgent-background;
+    selected-active-background: @active-background;
+    separatorcolor: @active-background;
+    bordercolor: #935189;
+}
+
+
+#window {
+  background-color: @background-color;
+  transparency:	"real";
+  width:		  320px;
+  height:		  144px;
+  x-offset: -10px;
+  y-offset: 200px;
+  location: east;
+  border:           2;
+  border-radius:    6;
+  border-color:     @bordercolor;
+
+}
+
+#mainbox { children: [ listview];
+}
+
+#listview {
+    layout:     vertical;
+    lines: 2;
+    columns:3;
+    fixed-height:                true;
+    fixed-columns:               true;
+    fixed-height:                true;
+    border: false;
+    scrollbar: false;
+}
+
+#element {
+  border:  false;
+  border-radius:	10px;
+  padding: 20px;
+  width: 100px;
+
+}
+
+#element-text {
+  background-color:            transparent;
+  text-color:                  inherit;
+  highlight:                   inherit;
+  cursor:                      inherit;
+  vertical-align:              0.5;
+  horizontal-align:            0.5;
+
+
+}
+#element.normal.normal {
+    background-color: @background-color;
+    text-color:       @foreground;
+    orientation:                 horizontal;
+    cursor:                      pointer;
+}
+
+
+#element.selected.normal {
+    background-color: @selected-background;
+    text-color:       @foreground;
+}
+
+#element.alternate.normal {
+    background-color: @background-color;
+    text-color:       @foreground;
+}

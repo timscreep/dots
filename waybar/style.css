@@ -1,0 +1,107 @@
+@define-color background #282a36;
+@define-color current_line #44475a;
+@define-color foreground #F8F8F2;
+@define-color comment #6272A4;
+@define-color green #25d865;
+@define-color orange #FFB86C;
+@define-color pink #FF79C6;
+@define-color purple #BD93F9;
+@define-color red #FF5555;
+@define-color yellow #F1FA8C;
+
+
+
+.modules-right {
+    font-family:    "Cousine Nerd Font Mono";
+    font-size:      15px;
+}
+
+.modules-center {
+    font-family:    "JoyPixels";
+    font-size:      15px;
+}
+
+.modules-left {
+    font-family:    "Cousine Nerd Font Mono";
+    font-size:      12px;
+}
+
+
+
+
+window#waybar {
+    background: none;
+    color: black;
+}
+
+
+/* === work spaces === */
+
+#workspaces {
+    min-width: 480px;
+    background:         @background;
+    padding:            0px 10px 0px 10px;
+    	border-radius: 12px;
+}
+
+#workspaces button {
+    margin:             0px 0px 0px 0px;
+    padding:            0px 20px 0px 20px;
+    color:              @foreground;
+    background:         @background;
+}
+
+
+
+#workspaces button:hover {
+    color:              @white;
+    background:         @current_line;
+    border-radius:      0px;
+    box-shadow:         none;
+    text-shadow:        none;
+}
+
+#workspaces button.persistent {
+    color:              @white;
+    background:         @background;
+    border-radius:      0px;
+    border-color: @background;
+
+    box-shadow:         none;
+    text-shadow:        none;
+}
+
+#workspaces button.active {
+    color:              @foreground;
+    background:         @current_line;
+    border-radius:      0px;
+    border-top-left-radius:      0px;
+    border-top-right-radius:      0px;
+    border-bottom:      3px solid @green;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
+
+#custom-notification {
+	color: @background;
+}
+
+
+#tray, #clock {
+  min-width: 240px;
+    font-size: 15px;
+    background: @background;
+    color: @foreground;
+  border-radius: 12px;
+}
+
+#tray{
+    margin-right: 120px;
+
+}
+
+#clock{
+    margin-left: 120px;
+}
