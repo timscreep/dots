@@ -3,7 +3,7 @@ yay -S --noconfirm hyprland firefox nautilus \
                   ttf-jetbrains-mono-nerd noto-fonts-emoji \
                   polkit-gnome python-requests starship \
                   swappy grim slurp pamixer brightnessctl \
-                  bluez bluez-utils lxappearance xfce4-settings \
+                  bluez bluez-utils blueman lxappearance xfce4-settings \
                   dracula-gtk-theme dracula-icons-git xdg-desktop-portal-hyprland \
                   btop steam baobab mate-notification-daemon www \
                   libinput-gestures wmctrl xone-dkms winetricks \
