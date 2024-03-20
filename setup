@@ -29,8 +29,8 @@ flatpak install -y --noninteractive flathub org.kde.krita &&
 flatpak install -y --noninteractive flathub org.gimp.GIMP &&
 flatpak install -y --noninteractive flathub && org.localsend.localsend_app &&
 flatpak install -y --noninteractive flathub org.gnome.FileRoller &&
-flatpak install -y --noninteractive flathub com.visualstudio.code
-
+flatpak install -y --noninteractive flathub com.visualstudio.code &&
+flatpak install -y --noninteractive flathub org.signal.Signal
 
 cp -R /kitty ~/.config
 cp -R /hypr ~/.config
