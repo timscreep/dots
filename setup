@@ -7,7 +7,8 @@ yay -S --noconfirm hyprland firefox nautilus \
                   dracula-gtk-theme dracula-icons-git xdg-desktop-portal-hyprland \
                   btop steam baobab mate-notification-daemon www \
                   libinput-gestures wmctrl xone-dkms winetricks \
-                  neofetch xwaylandvideobridge sddm spicetify
+                  neofetch xwaylandvideobridge sddm spicetify \
+                  kvantum
 
 sudo gpasswd -a $USER input
 
@@ -30,7 +31,8 @@ flatpak install -y --noninteractive flathub org.gimp.GIMP &&
 flatpak install -y --noninteractive flathub && org.localsend.localsend_app &&
 flatpak install -y --noninteractive flathub org.gnome.FileRoller &&
 flatpak install -y --noninteractive flathub com.visualstudio.code &&
-flatpak install -y --noninteractive flathub org.signal.Signal
+flatpak install -y --noninteractive flathub org.signal.Signal &&
+flatpak install -y --noninteractive flathub net.davidotek.pupgui2
 
 cp -R /kitty ~/.config
 cp -R /hypr ~/.config
