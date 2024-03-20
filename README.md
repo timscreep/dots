@@ -26,6 +26,9 @@ sudo nano /etc/pacman.conf
 archinstall
 ```
 в additional packages надо добавить git и flatpak
+
+
+
 далее после установки и ребута
 ```
 nmcli device wifi connect <имя-сети> password <пароль>
