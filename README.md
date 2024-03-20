@@ -54,5 +54,3 @@ chmod +x setup
 ./setup
 ```
 
-Решил начать со списка flatpak приложений. и установки flatpak на арч.
-sudo pacman -S flatpak hyprland firefox nautilus kitty rofi-wayland dmenu btop grim slurp amixer steam baobab mate-notification-daemon swww
