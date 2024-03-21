@@ -5,13 +5,18 @@ yay -S --noconfirm hyprland firefox nautilus \
                   swappy grim slurp pamixer brightnessctl \
                   bluez bluez-utils blueman lxappearance xfce4-settings \
                   dracula-gtk-theme dracula-icons-git xdg-desktop-portal-hyprland \
-                  btop steam baobab mate-notification-daemon www \
+                  btop steam baobab mate-notification-daemon swww \
                   libinput-gestures wmctrl xone-dkms winetricks \
                   neofetch xwaylandvideobridge sddm spicetify \
-                  kvantum
+                  kvantum wl-clipboard
 
 sudo gpasswd -a $USER input
 
+cp -R kitty ~/.config
+cp -R hypr ~/.config
+cp -R rofi ~/.config
+cp -R waybar ~/.config
+cp libinput-gestures.conf ~/.config
 
 flatpak install -y --noninteractive flathub md.obsidian.Obsidian &&
 flatpak install -y --noninteractive flathub ch.tlaun.TL &&
@@ -25,17 +30,12 @@ flatpak install -y --noninteractive flathub io.github.flattool.Warehouse &&
 flatpak install -y --noninteractive flathub com.github.tchx84.Flatseal &&
 flatpak install -y --noninteractive flathub com.heroicgameslauncher.hgl &&
 flatpak install -y --noninteractive flathub com.spotify.Client && 
-bash ((curl -sSL [https://spotx-official.github.io/run.sh](https://spotx-official.github.io/run.sh)) &&
 flatpak install -y --noninteractive flathub org.kde.krita &&
 flatpak install -y --noninteractive flathub org.gimp.GIMP &&
-flatpak install -y --noninteractive flathub && org.localsend.localsend_app &&
+flatpak install -y --noninteractive flathub org.localsend.localsend_app &&
 flatpak install -y --noninteractive flathub org.gnome.FileRoller &&
 flatpak install -y --noninteractive flathub com.visualstudio.code &&
 flatpak install -y --noninteractive flathub org.signal.Signal &&
 flatpak install -y --noninteractive flathub net.davidotek.pupgui2
 
-cp -R /kitty ~/.config
-cp -R /hypr ~/.config
-cp -R /rofi ~/.config
-cp -R /waybar ~/.config
-cp libinput-gestures.conf ~/.config
+
