@@ -8,7 +8,7 @@ yay -S --noconfirm hyprland firefox nautilus waybar\
                   btop steam baobab mate-notification-daemon swww \
                   libinput-gestures wmctrl xone-dkms winetricks \
                   neofetch xwaylandvideobridge sddm spicetify \
-                  kvantum wl-clipboard
+                  kvantum wl-clipboard zip
 
 sudo gpasswd -a $USER input
 
@@ -36,6 +36,8 @@ flatpak install -y --noninteractive flathub org.localsend.localsend_app &&
 flatpak install -y --noninteractive flathub org.gnome.FileRoller &&
 flatpak install -y --noninteractive flathub com.visualstudio.code &&
 flatpak install -y --noninteractive flathub org.signal.Signal &&
+
+bash <(curl -sSL https://spotx-official.github.io/run.sh)
 flatpak install -y --noninteractive flathub net.davidotek.pupgui2
 
 
