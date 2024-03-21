@@ -8,7 +8,7 @@ yay -S --noconfirm hyprland firefox nautilus waybar\
                   btop steam baobab mate-notification-daemon swww \
                   libinput-gestures wmctrl xone-dkms-git winetricks \
                   neofetch xwaylandvideobridge sddm spicetify \
-                  kvantum wl-clipboard zip heroic-games-launcher-bin
+                  kvantum wl-clipboard zip
 
 sudo gpasswd -a $USER input
 
