@@ -1,4 +1,4 @@
-yay -S --noconfirm hyprland firefox nautilus \
+yay -S --noconfirm hyprland firefox nautilus waybar\
                   kitty rofi-lbonn-wayland dmenu \
                   ttf-jetbrains-mono-nerd noto-fonts-emoji \
                   polkit-gnome python-requests starship \
