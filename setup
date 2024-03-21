@@ -6,7 +6,7 @@ yay -S --noconfirm hyprland firefox nautilus waybar\
                   bluez bluez-utils blueman lxappearance xfce4-settings \
                   dracula-gtk-theme dracula-icons-git xdg-desktop-portal-hyprland \
                   btop steam baobab mate-notification-daemon swww \
-                  libinput-gestures wmctrl xone-dkms winetricks \
+                  libinput-gestures wmctrl xone-dkms-git winetricks \
                   neofetch xwaylandvideobridge sddm spicetify \
                   kvantum wl-clipboard zip
 
@@ -29,15 +29,12 @@ flatpak install -y --noninteractive flathub io.gitlab.adhami3310.Converter &&
 flatpak install -y --noninteractive flathub io.github.flattool.Warehouse &&
 flatpak install -y --noninteractive flathub com.github.tchx84.Flatseal &&
 flatpak install -y --noninteractive flathub com.heroicgameslauncher.hgl &&
-flatpak install -y --noninteractive flathub com.spotify.Client && 
 flatpak install -y --noninteractive flathub org.kde.krita &&
 flatpak install -y --noninteractive flathub org.gimp.GIMP &&
 flatpak install -y --noninteractive flathub org.localsend.localsend_app &&
 flatpak install -y --noninteractive flathub org.gnome.FileRoller &&
-flatpak install -y --noninteractive flathub com.visualstudio.code &&
 flatpak install -y --noninteractive flathub org.signal.Signal &&
-
-bash <(curl -sSL https://spotx-official.github.io/run.sh)
 flatpak install -y --noninteractive flathub net.davidotek.pupgui2
-
+systemctl enable bluetooth
+systemctl start bluetooth
 
