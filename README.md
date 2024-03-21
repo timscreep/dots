@@ -40,7 +40,7 @@ nmcli device wifi connect <имя-сети> password <пароль>
 cd /opt/
 sudo git clone https://aur.archlinux.org/yay-git.git
 sudo chown -R <имя>:<имя> yay-git
-cd /yay-git
+cd yay-git
 makepkg -si
 ```
 далее все подтверждаем и можем переходить к следующему этапу
