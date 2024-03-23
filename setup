@@ -9,7 +9,10 @@ yay -S --noconfirm hyprland firefox nautilus waybar\
                   libinput-gestures wmctrl xone-dkms-git winetricks \
                   neofetch xwaylandvideobridge sddm spicetify \
                   kvantum wl-clipboard zip
-
+pacman -R dolphin
+pacman -R wofi
+pacman -R htop
+pacman -R kuserfeedback
 sudo gpasswd -a $USER input
 
 cp -R kitty ~/.config
