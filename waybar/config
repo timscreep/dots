@@ -1,14 +1,14 @@
 {
     "height": 28, // Waybar height (to be removed for auto height)
     "layer": "top", // Waybar at top layer
-    "modules-left": ["clock"],
-    "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["tray"],
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": [""],
+    "modules-right": ["tray", "clock"],
     "spacing": 50,
     "margin-top": 10,
     "margin-left": 10,
     "clock": {
-   "format": "{:%H:%M %A, %B %d}",
+   "format": "{:%H:%M}",
    "tooltip-format": "n<span size='9pt' font='WenQuanYi Zen Hei Mono'>{calendar}</span>",
    "calendar": {
      "mode"          : "year",
@@ -43,15 +43,11 @@
       },
       "format": "{icon}",
       "format-icons": {
-        "1": "Home  🎩",
-        "2": "Web 🕷",
-        "3": "Games  🎮",
-        "4": "Code ⚛",
-        "5": "Things  🐢",
-    },
-    "hyprland/window": {
-      "max-lenght": 30
-
+        "1": "🎩",
+        "2": "🕷",
+        "3": "🎮",
+        "4": "⚛",
+        "5": "🐢",
     },
     "tray": {
         "spacing": 0,

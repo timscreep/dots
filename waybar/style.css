@@ -6,23 +6,23 @@
 @define-color orange #FFB86C;
 @define-color pink #FF79C6;
 @define-color purple #BD93F9;
-@define-color red #FF5555;
-@define-color yellow #F1FA8C;
+@define-color cyan1 #33ccff;
+@define-color cyan2 #43ff64;
 
 
 
-.modules-right {
-    font-family:    "Cousine Nerd Font Mono";
+.modules-left {
+    font-family:     "FiraCode, JoyPixels";
     font-size:      15px;
 }
 
 .modules-center {
-    font-family:    "JoyPixels";
+    font-family:    "FiraCode, JoyPixels";
     font-size:      15px;
 }
 
-.modules-left {
-    font-family:    "Cousine Nerd Font Mono";
+.modules-right {
+    font-family:    "FiraCode";
     font-size:      12px;
 }
 
@@ -32,16 +32,21 @@
 window#waybar {
     background: none;
     color: black;
+
+
 }
 
 
 /* === work spaces === */
 
 #workspaces {
-    min-width: 480px;
+    min-width: 0px;
     background:         @background;
     padding:            0px 10px 0px 10px;
-    	border-radius: 12px;
+    border-color: @cyan1;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 12px;
 }
 
 #workspaces button {
@@ -74,10 +79,7 @@ window#waybar {
 #workspaces button.active {
     color:              @foreground;
     background:         @current_line;
-    border-radius:      0px;
-    border-top-left-radius:      0px;
-    border-top-right-radius:      0px;
-    border-bottom:      3px solid @green;
+    border-radius:      12px;
     padding-left: 30px;
     padding-right: 30px;
 }
@@ -89,19 +91,24 @@ window#waybar {
 }
 
 
-#tray, #clock {
+#tray, #clock{
   min-width: 240px;
     font-size: 15px;
     background: @background;
     color: @foreground;
+
+  border-color: @cyan1;
+  border-width: 2px;
+  border-style: solid;
   border-radius: 12px;
-}
-
-#tray{
-    margin-right: 120px;
 
 }
+
 
 #clock{
-    margin-left: 120px;
+    margin-right: 10px;
 }
+#tray{
+    margin-left: 1000px;
+}
+
