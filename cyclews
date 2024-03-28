@@ -1,0 +1,26 @@
+#! /usr/bin/python3
+import argparse
+import subprocess
+
+sysget = subprocess.getoutput
+focusedWorkspace=int(sysget("hyprctl activeworkspace | cut -d '(' -f2 | cut -d ')' -f1 | head -1"))
+
+
+parser = argparse.ArgumentParser()
+parser.add_argument('move', choices=['up', 'down'], help="enter the direction")
+parser.add_argument('-maxws', type = int, help="enter the maximum workspace number (int)")
+args = parser.parse_args()
+if args.move  == 'up':
+    if focusedWorkspace == args.maxws:
+        nextWorkspace = 1
+    else:
+        nextWorkspace = focusedWorkspace + 1
+    sysget(f"hyprctl dispatch workspace {nextWorkspace}")
+if args.move  == 'down':
+    if focusedWorkspace == 1:
+        prevWorkspace = args.maxws
+    else:
+        prevWorkspace = focusedWorkspace - 1
+    sysget(f"hyprctl dispatch workspace {prevWorkspace}")
+
+

@@ -1,0 +1,106 @@
+#! /usr/bin/python3
+from datetime import datetime
+import gi
+gi.require_version('Gtk', '3.0')
+import subprocess
+from gi.repository import Gtk, Gdk
+
+sysget = subprocess.getoutput
+capturedir = "~/Pictures/Captures"
+now = datetime.now()
+file = f"{capturedir}/{now.strftime('%y%m%d-%H%M-%S')}"
+sysget(f"[ -d {capturedir} ] || mkdir -pv {capturedir}")
+save = False
+
+def take_screenshot(widget, mode):
+    global save
+    window = Gdk.get_default_root_window()
+    if sysget('echo $XDG_SESSION_TYPE') == 'wayland':
+        if save == True:
+            if mode == "Area":
+                sysget(f"pkill screenshotim && slurp | grim -g - - | wl-copy && wl-paste > {file}.png")
+            elif mode == "Delay":
+                sysget(f"pkill screenshotim && sleep 5 && grim - | wl-copy && wl-paste > {file}.png")
+            elif mode == "Full":
+                sysget(f"pkill screenshotim && sleep 0.5 && grim - | wl-copy && wl-paste > {file}.png")
+        if save == False:
+            if mode == "Area":
+                sysget("pkill screenshotim && slurp | grim -g - - | wl-copy")
+            elif mode == "Delay":
+                sysget("pkill screenshotim && sleep 5 && grim - | wl-copy")
+            elif mode == "Full":
+                sysget("pkill screenshotim && sleep 0.5 && grim - | wl-copy")
+"""
+    else:
+
+# ZOMBIE CODE BUT I NEEEEEEED IT
+#        if save == True:
+#            if mode == "Area":
+#                sysget(f"pkill screenshotim && maim -s | xclip -selection clipboard -t image/png && xclip -o {file}.png")
+#            elif mode == "Delay":
+#                sysget(f"pkill screenshotim && maim -d 5 | xclip -selection clipboard -t image/pn && xclip -o {file}.png")
+#            elif mode == "Full":
+#                sysget(f"pkill screenshotim && maim -d 1| xclip -selection clipboard -t image/png && xclip -o {file}.png")
+#        if save == False:
+#            if mode == "Area":
+#                sysget("pkill screenshotim && maim -s | xclip -selection clipboard -t image/png")
+#            elif mode == "Delay":
+#                sysget("pkill screenshotim && maim -d 5 | xclip -selection clipboard -t image/png")
+#            elif mode == "Full":
+#                sysget("pkill screenshotim && maim -d 1| xclip -selection clipboard -t image/png")
+"""
+def on_switch_activated(switch, gparam):
+    global save
+    if switch.get_active():
+        print("Save enabled")
+        save = True
+    else:
+        print("Save disabled")
+        save = False
+  
+window = Gtk.Window()
+window.connect("destroy", Gtk.main_quit)
+screen = Gdk.Screen.get_default()
+width = screen.get_width()
+height = screen.get_height()
+window.set_default_size(width // 16, height // 16) 
+
+
+
+button_area = Gtk.Button.new_with_label("Area")
+button_area.connect("clicked", take_screenshot, "Area")
+button_delay = Gtk.Button.new_with_label("Delay")
+button_delay.connect("clicked", take_screenshot, "Delay")
+button_full = Gtk.Button.new_with_label("Full")
+button_full.connect("clicked", take_screenshot, "Full")
+copy_save = Gtk.Switch()
+copy_save.connect("state-set", on_switch_activated)
+label = Gtk.Label()
+label.set_text("Save:")
+
+grid = Gtk.Grid()
+grid.set_margin_left(5)
+grid.set_margin_right(5)
+items = [button_area, button_delay, button_full, label]
+for item in items:
+    item.set_margin_top(10)
+    item.set_margin_left(5)
+    item.set_margin_right(5)
+    item.set_margin_bottom(10)
+
+
+
+copy_save.set_margin_top(5)
+copy_save.set_margin_left(5)
+copy_save.set_margin_right(5)
+copy_save.set_margin_bottom(5)
+
+
+grid.attach(button_area, 0, 0, 1, 1)
+grid.attach(button_delay, 1, 0, 1, 1)
+grid.attach(button_full, 2, 0, 1, 1)
+grid.attach(label, 1, 1, 1, 1)
+grid.attach(copy_save, 2, 1, 1, 1)
+window.add(grid)
+window.show_all()
+Gtk.main()
