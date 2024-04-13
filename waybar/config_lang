@@ -1,9 +1,0 @@
-{
-    "height": 24, // Waybar height (to be removed for auto height)
-    "width": 120,
-    "layer": "top", // Waybar at top layer
-    "offset-x": 5,
-    "offset-y": 120,
-    
-    "modules-center": ["hyprland/language"],
-}
