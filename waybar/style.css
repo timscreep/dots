@@ -20,16 +20,6 @@
 }
 
 
-
-
-window#waybar {
-    background: none;
-    color: black;
-
-
-}
-
-
 /* === work spaces === */
 
 #workspaces {
@@ -79,23 +69,16 @@ window#waybar {
     border-color: @cyan1;
 }
 
-
-
-
-
 #tray, #clock{
-  min-width: 240px;
+    min-width: 240px;
     font-size: 15px;
     background: @background;
     color: @foreground;
-
-  border-color: @cyan1;
-  border-width: 2px;
-  border-style: solid;
-  border-radius: 12px;
-
+    border-color: @cyan1;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 12px;
 }
-
 
 #clock{
     margin-right: 10px;
