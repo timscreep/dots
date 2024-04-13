@@ -1,13 +1,6 @@
-@define-color background #282a36;
-@define-color current_line #44475a;
-@define-color foreground #F8F8F2;
-@define-color comment #6272A4;
-@define-color green #25d865;
-@define-color orange #FFB86C;
-@define-color pink #FF79C6;
-@define-color purple #BD93F9;
+@define-color background #000000;
 @define-color cyan1 #33ccff;
-@define-color cyan2 #43ff64;
+
 
 
 
@@ -77,18 +70,17 @@ window#waybar {
 }
 
 #workspaces button.active {
-    color:              @foreground;
-    background:         @current_line;
-    border-radius:      12px;
+    color:              @background;
+    background:         @background;
+    border-radius:      9px;
     padding-left: 20px;
     padding-right: 20px;
+
+    border-color: @cyan1;
 }
 
 
 
-#custom-notification {
-	color: @background;
-}
 
 
 #tray, #clock{
@@ -108,5 +100,4 @@ window#waybar {
 #clock{
     margin-right: 10px;
 }
-
 
