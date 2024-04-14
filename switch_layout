@@ -1,0 +1,33 @@
+#! /usr/bin/python3
+import gi
+gi.require_version('Gtk', '3.0') 
+from gi.repository import Gtk, GLib, Gdk # type: ignore
+import subprocess
+
+class LayoutSwitcher(Gtk.Window):
+    def __init__(self):
+        Gtk.Window.__init__(self, title="Layout Switcher")
+        screen = Gdk.Screen.get_default()
+        width = screen.get_width()
+        height = screen.get_height()
+        self.set_default_size(width // 16, height // 16) 
+        self.add(Gtk.Label(self.get_layout()))
+        GLib.timeout_add_seconds(1, self.close_win)
+
+    def get_layout(self):
+        request = str(subprocess.getoutput("hyprctl devices | grep -A 2 'at-translated-set-2-keyboard' | grep 'active keymap' | sed 's/active keymap://'"))
+        if 'English' in request:
+            return 'EN'
+        elif 'Russian' in request:
+            return 'RU'
+        else:
+            return None
+
+    def close_win(self):
+        subprocess.getoutput('pkill switch_layout')
+
+
+layout_win = LayoutSwitcher()
+layout_win.show_all()
+
+Gtk.main()
