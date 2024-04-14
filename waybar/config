@@ -1,64 +1,59 @@
 {
-    "height": 28, // Waybar height (to be removed for auto height)
-    "layer": "top", // Waybar at top layer
+    "height": 28,
+    "layer": "top",
+    "position": "top",
+    "layout": "bottom",
+
     "modules-left": ["hyprland/workspaces"],
-    "modules-center": [""],
+    "modules-center": [],
     "modules-right": ["tray", "clock"],
+
     "spacing": 50,
     "margin-top": 10,
     "margin-left": 10,
+
+
     "clock": {
-   "format": "{:%H:%M}",
-   "tooltip-format": "n<span size='9pt' font='WenQuanYi Zen Hei Mono'>{calendar}</span>",
-   "calendar": {
-     "mode"          : "year",
-     "mode-mon-col"  : 3,
-     "weeks-pos"     : "right",
-     "on-scroll"     : 1,
-     "on-click-right": "mode",
-     "format": {
-       "months":     "<span color='#ffead3'><b>{}</b></span>",
-       "days":       "<span color='#ecc6d9'><b>{}</b></span>",
-       "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
-       "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
-       "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
-     }
-   },
-   "actions": {
-     "on-click-right": "mode"
-   }
- },
+            "format": "{:%H:%M}",
+            "tooltip-format": "<tt>{calendar}</tt>",
+            "calendar": {
+            "format": {
+                    "today":      "<span color='#33ccff'><b><u>{}</u></b></span>"
+                      }
+                        }
+
+              },
 
     "hyprland/workspaces": {
 
-      "all-outputs": true,
-      "active-only": false,
-      "on-click": "activate",
-      "persistent_workspaces": {
-      "1": [],
-      "2": [],
-      "3": [],
-      "4": [],
-      "5": [],
-      "6": [],
-      },
-      "format": "{icon}",
-      "format-icons": {
-        "1": "🎩",
-        "2": "🕷",
-        "3": "🎮",
-        "4": "⚛",
-        "5": "🐢",
-        "6": "🎵"
-    },
+            "all-outputs": true,
+            "active-only": false,
+            "on-click": "activate",
+            "persistent_workspaces": {
+                    "1": [],
+                    "2": [],
+                    "3": [],
+                    "4": [],
+                    "5": [],
+                    "6": []
+                                      },
+            "format": "{icon}",
+            "format-icons": {
+                    "1": "🎩",
+                    "2": "🕷",
+                    "3": "🎮",
+                    "4": "⚛",
+                    "5": "🐢",
+                    "6": "🎵"
+                            },
     "tray": {
-        "spacing": 0,
-        "icon-size": 21
-    },
+            "spacing": 0,
+            "icon-size": 21
+            }
 
 
 
 
 
-}
+                            }
 }
