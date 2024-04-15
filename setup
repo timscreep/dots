@@ -1,18 +1,14 @@
 yay -S --noconfirm hyprland firefox nautilus waybar\
                   kitty rofi-lbonn-wayland dmenu \
                   ttf-jetbrains-mono-nerd noto-fonts-emoji \
-                  polkit-gnome python-requests starship \
+                  polkit-gnome python-requests \
                   swappy grim slurp pamixer brightnessctl \
                   bluez bluez-utils blueman lxappearance xfce4-settings \
                   dracula-gtk-theme dracula-icons-git xdg-desktop-portal-hyprland \
-                  btop steam baobab mate-notification-daemon swww \
+                  btop steam baobab mate-notification-daemon wbg \
                   libinput-gestures wmctrl xone-dkms-git winetricks \
                   neofetch xwaylandvideobridge sddm spicetify \
                   kvantum wl-clipboard zip
-pacman -R dolphin
-pacman -R wofi
-pacman -R htop
-pacman -R kuserfeedback
 sudo gpasswd -a $USER input
 
 cp -R kitty ~/.config
@@ -20,27 +16,8 @@ cp -R hypr ~/.config
 cp -R rofi ~/.config
 cp -R waybar ~/.config
 cp libinput-gestures.conf ~/.config
-gsettings set org.gnome.desktop.interface icon-theme "Dracula"
-gsettings set org.gnome.desktop.interface gtk-theme "Dracula"
+gsettings set org.gnome.desktop.wm.preferences button-layout ':'
 
-flatpak install -y --noninteractive flathub md.obsidian.Obsidian &&
-flatpak install -y --noninteractive flathub ch.tlaun.TL &&
-flatpak install -y --noninteractive flathub com.discordapp.Discord &&
-flatpak install -y --noninteractive flathub com.github.wwmm.easyeffects &&
-flatpak install -y --noninteractive flathub com.github.rafostar.Clapper &&
-flatpak install -y --noninteractive flathub io.bassi.Amberol &&
-flatpak install -y --noninteractive flathub org.telegram.desktop org.telegram.desktop &&
-flatpak install -y --noninteractive flathub io.gitlab.adhami3310.Converter &&
-flatpak install -y --noninteractive flathub io.github.flattool.Warehouse &&
-flatpak install -y --noninteractive flathub com.github.tchx84.Flatseal &&
-flatpak install -y --noninteractive flathub com.heroicgameslauncher.hgl &&
-flatpak install -y --noninteractive flathub org.kde.krita &&
-flatpak install -y --noninteractive flathub org.gimp.GIMP &&
-flatpak install -y --noninteractive flathub org.localsend.localsend_app &&
-flatpak install -y --noninteractive flathub org.gnome.FileRoller &&
-flatpak install -y --noninteractive flathub org.signal.Signal &&
-flatpak install -y --noninteractive flathub net.davidotek.pupgui2 &&
-flatpak install -y --noninteractive flathub com.visualstudio.code
 systemctl enable bluetooth
 systemctl start bluetooth
 
