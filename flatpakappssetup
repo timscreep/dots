@@ -1,0 +1,19 @@
+
+flatpak install -y --noninteractive flathub md.obsidian.Obsidian &&
+flatpak install -y --noninteractive flathub ch.tlaun.TL &&
+flatpak install -y --noninteractive flathub com.discordapp.Discord &&
+flatpak install -y --noninteractive flathub com.github.wwmm.easyeffects &&
+flatpak install -y --noninteractive flathub com.github.rafostar.Clapper &&
+flatpak install -y --noninteractive flathub io.bassi.Amberol &&
+flatpak install -y --noninteractive flathub org.telegram.desktop org.telegram.desktop &&
+flatpak install -y --noninteractive flathub io.gitlab.adhami3310.Converter &&
+flatpak install -y --noninteractive flathub io.github.flattool.Warehouse &&
+flatpak install -y --noninteractive flathub com.github.tchx84.Flatseal &&
+flatpak install -y --noninteractive flathub com.heroicgameslauncher.hgl &&
+flatpak install -y --noninteractive flathub org.kde.krita &&
+flatpak install -y --noninteractive flathub org.gimp.GIMP &&
+flatpak install -y --noninteractive flathub org.localsend.localsend_app &&
+flatpak install -y --noninteractive flathub org.gnome.FileRoller &&
+flatpak install -y --noninteractive flathub org.signal.Signal &&
+flatpak install -y --noninteractive flathub net.davidotek.pupgui2 &&
+flatpak install -y --noninteractive flathub com.visualstudio.code
