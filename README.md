@@ -1,12 +1,9 @@
-![image](https://github.com/timscreep/dots/assets/81462085/a4f3b5a4-d1d6-414e-a359-e2f0ae481646)
+![image](https://github.com/timscreep/dots/assets/81462085/b8f7587f-8b99-4309-9106-2356c3f4178d)
 
 
-
-
-я на Nobara (Fedora)
+я перехожу на арч, так как там новая версия Hyprland
 ```
-sudo dnf install git curl flatpak
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+sudo pacman -S git curl flatpak
 reboot
 ```
 ```
