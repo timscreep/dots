@@ -3,20 +3,28 @@
 
 
 
-
-.modules-left {
-    font-family:     "FiraCode, JoyPixels";
+.modules-right {
+    font-family:    "FiraCode";
     font-size:      15px;
 }
 
 .modules-center {
-    font-family:    "FiraCode, JoyPixels";
+    font-family:    "Cousine";
     font-size:      15px;
 }
 
-.modules-right {
-    font-family:    "FiraCode";
-    font-size:      12px;
+.modules-left {
+    font-family:    "JoyPixels";
+    font-size:      15px;
+}
+
+
+
+window#waybar {
+    background: none;
+    color: black;
+
+
 }
 
 
@@ -69,18 +77,51 @@
     border-color: @cyan1;
 }
 
-#tray, #clock{
-    min-width: 240px;
+
+
+
+
+#tray, #clock, #keyboard-state, #battery{
+  min-width: 240px;
     font-size: 15px;
     background: @background;
     color: @foreground;
-    border-color: @cyan1;
-    border-width: 2px;
-    border-style: solid;
-    border-radius: 12px;
+  font-family:    "0xProto Nerd Font";
+  border-color: @cyan1;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 12px;
+
 }
+
 
 #clock{
     margin-right: 10px;
 }
+#keyboard-state label {
 
+    color: gray;
+
+}
+#keyboard-state label.locked {
+    font-size:      15px;
+    color: @cyan1;
+
+}
+
+
+
+
+#battery {
+    font-size:          13.5px;
+    color:         green;
+}
+#battery.warning {
+    color:         yellow;
+}
+#battery.critical {
+    color:         red;
+}
+#battery.charging {
+    color:         green;
+}
