@@ -1,4 +1,4 @@
-![image](https://github.com/timscreep/dots/assets/81462085/b8f7587f-8b99-4309-9106-2356c3f4178d)
+![image](https://github.com/timscreep/dots/assets/81462085/6e70b29a-99df-45ae-9d13-44aef3fe5835)
 
 
 я перехожу на арч, так как там новая версия Hyprland
@@ -12,6 +12,8 @@ sudo git clone https://github.com/timscreep/dots.git
 sudo chown -R <имя>:<имя> dots
 cd dots
 chmod +x setup
+chmod +x flatpakappssetup
 ./setup
+./flatpakappssetup
 ```
 
