@@ -1,0 +1,188 @@
+#! /usr/bin/python3
+import gi
+gi.require_version('Gtk', '3.0') # type: ignore
+from gi.repository import Gtk, Gdk, GLib, GdkPixbuf # type: ignore
+import psutil # type: ignore
+import subprocess
+import os
+
+
+sysget = subprocess.getoutput
+
+
+def get_metadata(param:str) -> str: 
+    if param == 'arturl':
+        return str(sysget("playerctl --player=spotify metadata mpris:artUrl | sed -e 's/open.spotify.com/i.scdn.co/g'"))
+    elif param == 'artist':
+        return str(sysget("playerctl --player=spotify metadata xesam:artist"))
+    elif param == 'album':
+        return str(sysget("playerctl --player=spotify metadata xesam:album"))
+    elif param == 'title':
+        return str(sysget("playerctl --player=spotify metadata xesam:title"))
+    elif param == 'status':
+        return str(sysget("playerctl --player=spotify status"))
+
+    else:
+        return 'CHECK ARGS'
+
+
+def get_value(param:str) -> int:
+    if param == 'brightness':
+        return int(sysget("brightnessctl -P g"))
+    elif param == 'volume':
+        return int(float(sysget("wpctl get-volume @DEFAULT_AUDIO_SINK@ | cut -d ':' -f2 | cut -d '[' -f1"))*100)
+    else:
+        print('CHECK ARGS')
+        return -1
+
+def is_muted() -> bool:
+    output = sysget("wpctl get-volume @DEFAULT_AUDIO_SINK@ | cut -d ' ' -f3")
+    if output == "[MUTED]":
+        return True
+    else:
+        return False
+
+
+
+class Image(Gtk.Image):
+    def __init__(self):
+        Gtk.Image.__init__(self)
+        self.update_image()
+
+    def update_image(self, widget=None):
+        image_path = self.download_and_get_image_path()
+        resized_pixbuf = self.resize_image(image_path, 300, 300)
+        self.set_from_pixbuf(resized_pixbuf)
+
+    def resize_image(self, image_path, width, height):
+        pixbuf = GdkPixbuf.Pixbuf.new_from_file(image_path)
+        pixbuf = pixbuf.scale_simple(width, height, GdkPixbuf.InterpType.BILINEAR)
+        return pixbuf
+    
+    def download_and_get_image_path(self):
+        arturl = get_metadata('arturl')
+        artist = get_metadata('artist')
+        album = get_metadata('album')
+        capturedir = "Downloads/tiMON"
+        sysget(f"[ -d {capturedir} ] || mkdir -pv {capturedir}")
+        if artist == 'No players found' or album == 'No players found':
+            file_path = ".config/tiMON/Default.png"
+        else:
+            file_path = f"Downloads/tiMON/{artist} - {album}.png"
+            if not os.path.exists(file_path):
+                sysget(f"wget -O Downloads/tiMON/\"{artist} - {album}.png\" {arturl}")
+                print('скачивание') 
+        return file_path
+    
+
+
+
+class MainWindow(Gtk.Window):
+    def __init__(self):
+        Gtk.Window.__init__(self)
+        self.connect("destroy", Gtk.main_quit)
+        self.set_default_size(600, 400)
+        
+        grid = Gtk.Grid()
+        grid.set_row_spacing(6)
+        grid.set_column_spacing(6)
+        self.add(grid)
+
+        # Brightness Control
+
+        current_brightness = get_value('brightness')
+        self.update_current_brightness()
+        brightness_adjustment = Gtk.Adjustment(value=current_brightness, lower=10 , upper=100)
+        brightness_scale = Gtk.Scale(orientation=Gtk.Orientation.VERTICAL, adjustment=brightness_adjustment, inverted=True, digits=0)
+        brightness_scale.connect("value-changed", self.on_brightness_changed)
+
+        # Volume Control
+
+        current_volume = get_value('volume')
+        volume_adjustment = Gtk.Adjustment(value=current_volume, lower=0 , upper=150)
+        volume_scale = Gtk.Scale(orientation=Gtk.Orientation.VERTICAL, adjustment=volume_adjustment, inverted=True, digits=0)
+        volume_scale.connect("value-changed", self.on_volume_changed)
+
+        # Buttons
+        
+        title_label = Gtk.Label()
+        image = Image()
+
+
+        
+        toggle_volume_button = Gtk.Button()
+        toggle_volume_button.connect("clicked", self.on_toggle_volume_clicked)
+        self.play_pause_button = Gtk.Button()
+        self.play_pause_button.connect("clicked", self.on_play_pause_clicked, 'play-pause')
+
+        previous_button = Gtk.Button.new_with_label("")
+        previous_button.connect("clicked", self.on_play_pause_clicked, 'previous')
+
+        next_button = Gtk.Button.new_with_label("")
+        next_button.connect("clicked", self.on_play_pause_clicked, 'next')
+        
+        grid.attach(volume_scale, 1, 0, 1, 30)
+        grid.attach(brightness_scale, 35, 0, 1, 30)
+        grid.attach(title_label, 3, 35, 30, 1)
+        grid.attach(image, 3, 0, 30, 30)
+        
+        grid.attach(toggle_volume_button, 1, 35, 1, 1) 
+        grid.attach(previous_button, 3, 100, 10, 1)
+        grid.attach(self.play_pause_button, 13, 100, 10, 1)
+        grid.attach(next_button, 23, 100, 10, 1)
+       
+        self.update_muted_info(toggle_volume_button)
+        self.update_music_info(title_label)
+        self.update_image(image)
+        self.show_all()
+
+
+    def on_toggle_volume_clicked(self, button):
+        sysget(f"wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle")
+    
+    def on_play_pause_clicked(self, button, action):
+        sysget(f"playerctl --player=spotify {action}")
+
+    def on_brightness_changed(self, scale):
+        brightness_value = int(scale.get_value())
+        sysget(f"brightnessctl s {brightness_value}%")
+
+    def on_volume_changed(self, scale):
+        volume_value = int(scale.get_value())
+        sysget(f"wpctl set-volume @DEFAULT_AUDIO_SINK@ {int(volume_value)}%")
+    
+
+    def update_current_brightness(self):
+        self.brightness_scale = get_value('brightness')
+        self.timeout_id = GLib.timeout_add_seconds(1, self.update_current_brightness)
+
+    def update_music_info(self, label):
+        artist = get_metadata('artist')
+        title = get_metadata('title')
+        status = get_metadata('status')
+        if len(title) > 25:
+            title = title[:23] + '...'
+        if len(artist) > 25:
+            artist = artist[:23] + '...'
+        label.set_text(f"{artist}\n{title}")
+        if status == 'Playing':
+            self.play_pause_button.set_label("")
+        elif status == 'Paused':
+            self.play_pause_button.set_label("")
+        self.timeout_id = GLib.timeout_add_seconds(1, self.update_music_info, label)
+    
+
+    def update_muted_info(self, button):
+        if is_muted() == True:
+            button.set_label("")
+        else:
+            button.set_label("")
+        self.timeout_id = GLib.timeout_add_seconds(1, self.update_muted_info, button)
+    def update_image(self, image):
+        image.update_image(image)
+        self.timeout_id = GLib.timeout_add_seconds(1, self.update_image, image)
+
+win = MainWindow()
+win.connect("destroy", Gtk.main_quit)
+win.show_all()
+Gtk.main()
