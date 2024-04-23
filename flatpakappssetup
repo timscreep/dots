@@ -13,7 +13,6 @@ flatpak install -y --noninteractive flathub com.heroicgameslauncher.hgl &&
 flatpak install -y --noninteractive flathub org.kde.krita &&
 flatpak install -y --noninteractive flathub org.gimp.GIMP &&
 flatpak install -y --noninteractive flathub org.localsend.localsend_app &&
-flatpak install -y --noninteractive flathub org.gnome.FileRoller &&
 flatpak install -y --noninteractive flathub org.signal.Signal &&
 flatpak install -y --noninteractive flathub net.davidotek.pupgui2 &&
-flatpak install -y --noninteractive flathub com.visualstudio.code
+
