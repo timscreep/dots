@@ -16,7 +16,6 @@ yay -S --noconfirm hyprland rofi-wayland \
                   sddm sddm-theme-astronaut spicetify \
                   kvantum lxappearance xfce4-settings \
                   steam xone-dkms-git winetricks \
-                  wl-clipboard \
                   simple-scan \
 yay libinput-gestures wl-clipboard
 sudo gpasswd -a $USER input
