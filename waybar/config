@@ -8,8 +8,6 @@
     "modules-right": [ "tray", "clock"],
 
     "spacing": 50,
-    "margin-top": 10,
-    "margin-left": 10,
 
        "battery": {
 	    "bat": "BAT1",
