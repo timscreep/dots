@@ -1,5 +1,5 @@
 yay -S --noconfirm hyprland rofi-wayland \
-                  kitty fish lsd \
+                  kitty zsh lsd \
                   bash-completion \
                   firefox nautilus waybar\
                   nvim rustup \
