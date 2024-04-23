@@ -1,5 +1,5 @@
 yay -S --noconfirm hyprland firefox nautilus waybar\
-                  kitty rofi-lbonn-wayland dmenu \
+                  kitty rofi-wayland\
                   ttf-jetbrains-mono-nerd noto-fonts-emoji \
                   polkit-gnome python-requests \
                   swappy grim slurp pamixer brightnessctl \
