@@ -1,14 +1,23 @@
-yay -S --noconfirm hyprland firefox nautilus waybar\
-                  kitty rofi-wayland\
+yay -S --noconfirm hyprland rofi-wayland \
+                  kitty fish lsd \
+                  bash-completion \
+                  firefox nautilus waybar\
+                  nvim rustup \
                   ttf-jetbrains-mono-nerd noto-fonts-emoji \
-                  polkit-gnome python-requests \
-                  swappy grim slurp pamixer brightnessctl \
-                  bluez bluez-utils blueman lxappearance xfce4-settings \
-                  dracula-gtk-theme dracula-icons-git xdg-desktop-portal-hyprland \
-                  btop steam baobab mate-notification-daemon wbg \
-                  libinput-gestures wmctrl xone-dkms-git winetricks \
-                  neofetch xwaylandvideobridge sddm spicetify \
-                  kvantum wl-clipboard zip
+                  polkit-gnome udiskie ntfs-3g \
+                  baobab file-roller \
+                  grim slurp amixer brightnessctl \
+                  blueman network-manager-applet \
+                  dracula-gtk-theme xdg-desktop-portal-hyprland \
+                  btop mate-notification-daemon wbg \
+                  libinput-gestures wmctrl wtype \
+                  nvidia nvidia-dkms nvidia-utils nvidia-settings\
+                  neofetch xwaylandvideobridge
+                  sddm sddm-theme-astronaut spicetify \
+                  kvantum lxappearance xfce4-settings \
+                  steam xone-dkms-git winetricks \
+                  wl-clipboard \
+                  simple-scan \
 sudo gpasswd -a $USER input
 
 cp -R kitty ~/.config
@@ -17,7 +26,9 @@ cp -R rofi ~/.config
 cp -R waybar ~/.config
 cp libinput-gestures.conf ~/.config
 gsettings set org.gnome.desktop.wm.preferences button-layout ':'
-
+gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+sudo systemctl enable sddm
 systemctl enable bluetooth
 systemctl start bluetooth
 
+chsh -s /bin/fish
