@@ -18,7 +18,7 @@ yay -S --noconfirm hyprland rofi-wayland \
                   steam xone-dkms-git winetricks \
                   wl-clipboard \
                   simple-scan \
-yay libinput-gestures
+yay libinput-gestures wl-clipboard
 sudo gpasswd -a $USER input
 
 cp -R kitty ~/.config
