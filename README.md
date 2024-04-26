@@ -20,3 +20,12 @@ chmod +x flatpakappssetup
 гайс, для установки дровов на карты нвидиа я юзал этот гайд:
 https://github.com/korvahannu/arch-nvidia-drivers-installation-guide
 у меня просто были недопонимания по поводу хуков, здесь написано кратко, но это работает.
+
+
+
+
+пропатч spotify с помощью spicetify и spotX
+https://github.com/SpotX-Official/SpotX-Bash
+```
+bash <(curl -sSL https://spotx-official.github.io/run.sh)
+```
