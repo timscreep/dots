@@ -1,0 +1,26 @@
+{ 
+    "start_hidden": true,
+    "name": "taskbar",  
+    "height": 140,
+    "width": 0,
+
+    "layer": "top",
+    "position": "bottom",
+
+    "mode": "hide",
+    "passthrough": "false",
+    "margin": "-40",
+    "modules-center":["wlr/taskbar"],
+    "spacing": 50,
+    "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 60,
+    "icon-theme": "Numix-Circle",
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "ignore-list": [
+       "pavucontrol",
+    ],
+    },
+}

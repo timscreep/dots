@@ -1,79 +1,109 @@
-@define-color background #000000;
-@define-color cyan1 #14FFFF;
-window#waybar {
-    background: none;
-    color: black;
+@define-color rosewater #f5e0dc;
+@define-color flamingo #f2cdcd;
+@define-color pink #f5c2e7;
+@define-color mauve #cba6f7;
+@define-color red #f38ba8;
+@define-color maroon #eba0ac;
+@define-color peach #fab387;
+@define-color yellow #f9e2af;
+@define-color green #a6e3a1;
+@define-color teal #94e2d5;
+@define-color sky #89dceb;
+@define-color sapphire #74c7ec;
+@define-color blue #89b4fa;
+@define-color lavender #b4befe;
+@define-color text #cdd6f4;
+@define-color subtext1 #bac2de;
+@define-color subtext0 #a6adc8;
+@define-color overlay2 #9399b2;
+@define-color overlay1 #7f849c;
+@define-color overlay0 #6c7086;
+@define-color surface2 #585b70;
+@define-color surface1 #45475a;
+@define-color surface0 #313244;
+@define-color base #1e1e2e;
+@define-color mantle #181825;
+@define-color crust #11111b;
+
+window#waybar.bar {
+    background:         @base;
+    color:              @text;
+    font-family:        JetBrainsMonoNL NFM Light;
+    border-radius:      0px;
 }
+window#waybar.taskbar {
+    background:         none;
+    color:              @text;
+    font-family:        JetBrainsMonoNL NFM Light;
+    border-radius:      0px;
+}
+
+
 
 
 /* === work spaces === */
 
 #workspaces {
-    min-width: 0px;
-    background:         @background;
+    min-width:          0px;
+    background:         @base;
     padding:            0px 0px 0px 0px;
-    border-color: @cyan1;
-    border-width: 2px;
-    border-style: solid;
-    border-radius: 12px;
-    font-family: "JoyPixels";
-    margin: 0px 10px;
+    font-family:        "JoyPixels";
+    margin:             0px 10px;
 }
 
 #workspaces button {
     margin:             0px 0px 0px 0px;
     padding:            0px 20px 0px 20px;
-    color:              @foreground;
-    background:         @background;
+    color:              @green;
+    background:         @base;
+    border-width:       2px;
 }
 
-
-
-#workspaces button:hover {
-    color:              @white;
-    background:         @current_line;
-    border-radius:      0px;
-    box-shadow:         none;
-    text-shadow:        none;
-}
-
-#workspaces button.persistent {
-    color:              @white;
-    background:         @background;
-    border-radius:      12px;
-    border-color: @background;
-    box-shadow:         none;
-    text-shadow:        none;
-}
 
 #workspaces button.active {
     color:              @background;
+    background:         @base;
+    border-style:       solid;
+    border-width:       2px;
+    border-top-color:   @green;
+    padding-left:       20px;
+    padding-right:      20px;
+
+}
+
+#workspaces button:hover{
+    border-top-width:   4px;
+    border-radius:      0;
+    border-color:       @base;
+    border-top-color:   @mauve;
+    background:         transparent;
+    color:              transparent;
+}
+
+
+
+#tray, #clock, #battery {
+    min-width:          100px;
+    font-size:          15px;
     background:         @background;
-    border-radius:      9px;
-    padding-left: 20px;
-    padding-right: 20px;
-
-    border-color: @cyan1;
+    color:              @foreground;
 }
 
-
-
-
-
-#tray, #clock, #battery{
-  min-width: 240px;
-    font-size: 15px;
-    background: @background;
-    color: @foreground;
-
-  border-color: @cyan1;
-  border-width: 2px;
-  border-style: solid;
-  border-radius: 12px;
-
+/* tasksksk bar*/
+#taskbar button {
+    background:         transparent;
+    padding-left:       10px;
+    padding-right:      9px;
+    border-radius:      0px 0px 0px 0px;
+    border:             0px solid transparent;
+    color:              transparent;
 }
-
-
-#clock{
-    margin-right: 10px;
+#taskbar button:hover {
+    padding-left:       10px;
+    padding-right:      9px;
+    border-radius:      0px 0px 0px 0px;
+    border:             0px solid transparent;
+    color:              transparent;
+    border-bottom-width:60px;
+    background:         transparent;
 }

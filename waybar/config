@@ -1,12 +1,12 @@
-{    "height": 30,
+{ 
+    "name": "bar",
+    "height": 30,
     "layer": "top",
     "position": "top",
     "layout": "top",
-
-    "modules-left": ["hyprland/workspaces", "battery"],
-    "modules-center": [],
-    "modules-right": [ "tray", "clock"],
-
+    "modules-left": ["clock"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["tray","battery"],
     "spacing": 50,
 
        "battery": {
@@ -59,3 +59,7 @@
 
                }
 }
+
+
+
+
