@@ -9,11 +9,12 @@ flatpak install -y --noninteractive flathub org.telegram.desktop org.telegram.de
 flatpak install -y --noninteractive flathub io.gitlab.adhami3310.Converter &&
 flatpak install -y --noninteractive flathub io.github.flattool.Warehouse &&
 flatpak install -y --noninteractive flathub com.github.tchx84.Flatseal &&
-flatpak install -y --noninteractive flathub com.heroicgameslauncher.hgl &&
 flatpak install -y --noninteractive flathub org.kde.krita &&
 flatpak install -y --noninteractive flathub org.gimp.GIMP &&
 flatpak install -y --noninteractive flathub org.localsend.localsend_app &&
-flatpak install flathub com.spotify.Client &&
+flatpak install -y --noninteractive flathub com.spotify.Client &&
+flatpak install -y --noninteractive flathub fr.handbrake.ghb &&
+flatpak install -y --noninteractive flathub com.obsproject.Studio &&
 flatpak update &&
 sudo flatpak override --filesystem=~/.themes
 sudo flatpak override --env=GTK_THEME=THEME_NAME
