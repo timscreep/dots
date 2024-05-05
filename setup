@@ -1,23 +1,22 @@
 yay -S --noconfirm hyprland rofi-wayland \
                   kitty zsh lsd \
-                  bash-completion \
                   firefox nautilus waybar\
-                  nvim rustup \
+                  nvim rustup tree-sitter ufw\
                   ttf-jetbrains-mono-nerd noto-fonts-emoji \
                   polkit-gnome udiskie ntfs-3g \
-                  baobab file-roller \
+                  baobab file-roller sushi\
                   grim slurp amixer brightnessctl \
                   blueman network-manager-applet \
-                  dracula-gtk-theme xdg-desktop-portal-hyprland \
-                  btop mate-notification-daemon wbg \
+                  xdg-desktop-portal-hyprland \
+                  btop mate-notification-daemon swww \
                   wmctrl wtype \
-                  nvidia nvidia-dkms nvidia-utils nvidia-settings\
-                  neofetch xwaylandvideobridge
-                  sddm sddm-theme-astronaut spicetify \
-                  kvantum lxappearance xfce4-settings \
-                  steam xone-dkms-git winetricks \
+                  nvidia nvidia-utils nvidia-settings\
+                  fastfetch xwaylandvideobridge
+                  sddm spicetify \
+                  steam xone-dkms-git heroic-games-launcher-bin\
                   simple-scan \
-yay libinput-gestures wl-clipboard
+                  catppuccin-gtk-theme-mocha \
+                  libinput-gestures wl-clipboard
 sudo gpasswd -a $USER input
 
 cp -R kitty ~/.config
