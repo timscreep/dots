@@ -1,18 +1,18 @@
 yay -S --noconfirm hyprland rofi-wayland \
                   kitty zsh lsd \
                   firefox nautilus waybar\
-                  nvim rustup tree-sitter ufw\
+                  neovim rustup ufw\
                   ttf-jetbrains-mono-nerd noto-fonts-emoji \
                   polkit-gnome udiskie ntfs-3g \
                   baobab file-roller sushi\
-                  grim slurp amixer brightnessctl \
+                  grim slurp brightnessctl \
                   blueman network-manager-applet \
                   xdg-desktop-portal-hyprland \
                   btop mate-notification-daemon swww \
                   wmctrl wtype \
                   nvidia nvidia-utils nvidia-settings\
-                  fastfetch xwaylandvideobridge
-                  sddm spicetify \
+                  fastfetch xwaylandvideobridge \
+                  sddm spicetify-cli \
                   steam xone-dkms-git heroic-games-launcher-bin\
                   simple-scan \
                   catppuccin-gtk-theme-mocha \
