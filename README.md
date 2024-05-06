@@ -1,4 +1,5 @@
-![image](https://github.com/timscreep/dots/assets/81462085/6e70b29a-99df-45ae-9d13-44aef3fe5835)
+![image](https://github.com/timscreep/dots/assets/81462085/3ad92418-eea9-4fbb-9db1-007433df08d8)
+
 
 
 я перехожу на арч, так как там новая версия Hyprland
