@@ -1,0 +1,159 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "kitty-direct",
+    "source": "/home/pavuk/Documents/Wallpapers/Olya-fetch.png",
+    "padding": {
+      "top": 5,
+      "left": 2
+    }
+  },
+  "display": {
+    "separator": ""
+  },
+  "modules": [
+    {
+      "type": "title",
+      "key": "├HOST╮",
+      "keyColor": "blue"
+    },
+    {
+      "type": "uptime",
+      "key": "│    ╰──",
+      "keyColor": "blue"
+    },
+    {
+      "type": "os",
+      "key": "├OS──╮",
+      "keyColor": "blue",
+      "format": "{2}"
+    },
+
+    {
+      "type": "kernel",
+      "key": "│    ╰──",
+      "keyColor": "blue"
+    },
+    {
+      "type": "packages",
+      "key": "├PKGS╮",
+      "format": "{}",
+      "keyColor": "blue"
+    },
+    {
+      "type": "packages",
+      "key": "│    ├──",
+      "format": "{} (pacman)",
+      "disabled": ["flatpak", "snap"],
+      "keyColor": "blue"
+    },
+    {
+      "type": "packages",
+      "key": "│    ╰──",
+      "format": "{} (flatpak)",
+      "disabled": ["pacman", "rpm", "dpkg"],
+      "keyColor": "blue"
+    },
+
+    {
+      "type": "wm",
+      "key": "├DE──╮",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "lm",
+      "key": "│    ╰──",
+      "keyColor": "cyan"
+    },
+
+    {
+      "type": "terminal",
+      "key": "├TERM╮",
+      "keyColor": "cyan"
+    },
+    {
+      "type": "shell",
+      "key": "│    ╰──",
+      "keyColor": "cyan"
+    },
+
+    {
+      "type": "host",
+      "key": "├PC──╮",
+      "keyColor": "green"
+    },
+    {
+      "type": "localip",
+      "key": "│    ╰──",
+      "keyColor": "green"
+    },
+    {
+      "type": "cpu",
+      "format": "{1}",
+      "key": "├CPU─╮",
+      "keyColor": "green"
+    },
+    {
+      "type": "cpuusage",
+      "format": "{1}",
+      "key": "│    ╰──",
+      "keyColor": "green"
+    },
+    {
+      "type": "gpu",
+      "format": "{2}",
+      "hideType": "integrated",
+      "key": "├GPU─╮",
+      "keyColor": "green"
+    },
+    {
+      "type": "gpu",
+      "format": "{3}",
+      "key": "│    ╰──",
+      "keyColor": "green"
+    },
+    {
+      "type": "disk",
+      "format": "{1} / {2}",
+      "key": "├Disk╮",
+      "keyColor": "green"
+    },
+    {
+      "type": "disk",
+      "format": "{3}",
+      "key": "│    ╰──",
+      "keyColor": "green"
+    },
+    {
+      "type": "memory",
+      "key": "├RAM─╮",
+      "format": "{1} / {2}",
+      "keyColor": "green"
+    },
+    {
+      "type": "memory",
+      "key": "│    ╰──",
+      "format": "{3}",
+      "keyColor": "green"
+    },
+    {
+      "type": "swap",
+      "key": "├Swap╮",
+      "format": "{1} / {2}",
+      "keyColor": "green"
+    },
+    {
+      "type": "swap",
+      "key": "│    ╰──",
+      "format": "{3}",
+      "keyColor": "green"
+    },
+
+    "break",
+    {
+      "type": "colors",
+      "paddingLeft": 0,
+      "symbol": "circle"
+    }
+  ]
+}
