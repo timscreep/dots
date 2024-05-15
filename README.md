@@ -29,4 +29,5 @@ https://github.com/korvahannu/arch-nvidia-drivers-installation-guide
 https://github.com/SpotX-Official/SpotX-Bash
 ```
 bash <(curl -sSL https://spotx-official.github.io/run.sh)
+curl -fsSL https://raw.githubusercontent.com/spicetify/spicetify-cli/master/install.sh | sh
 ```
