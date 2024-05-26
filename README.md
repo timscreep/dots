@@ -31,3 +31,10 @@ https://github.com/SpotX-Official/SpotX-Bash
 bash <(curl -sSL https://spotx-official.github.io/run.sh)
 curl -fsSL https://raw.githubusercontent.com/spicetify/spicetify-cli/master/install.sh | sh
 ```
+
+у меня звенят наушники, когда неправильно настроена штука энергосбережения для дискретки
+
+```
+echo 'on' > '/sys/bus/pci/devices/0000:01:00.0/power/control'
+```
+
