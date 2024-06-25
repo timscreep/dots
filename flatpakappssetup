@@ -14,12 +14,14 @@ flatpak install -y --noninteractive flathub com.github.tchx84.Flatseal &&
 flatpak install -y --noninteractive flathub org.kde.krita &&
 flatpak install -y --noninteractive flathub org.gimp.GIMP &&
 flatpak install -y --noninteractive flathub org.darktable.Darktable &&
+flatpak install -y --noninteractive flathub io.gitlab.theevilskeleton.Upscaler &&
 flatpak install -y --noninteractive flathub org.localsend.localsend_app &&
 flatpak install -y --noninteractive flathub com.spotify.Client &&
 flatpak install -y --noninteractive flathub fr.handbrake.ghb &&
 flatpak install -y --noninteractive flathub com.obsproject.Studio &&
 flatpak install -y --noninteractive flathub com.jeffser.Alpaca &&
-flatpak install -y --noninteractive flathub org.qbittorrent.qBittorrent
+flatpak install -y --noninteractive flathub org.qbittorrent.qBittorrent &&
+flatpak install -y --noninteractive flathub it.mijorus.gearlever &&
 flatpak update &&
 sudo flatpak override --filesystem=~/.themes
 sudo flatpak override --env=GTK_THEME=Catppuccin-Mocha-Standard-Sky-Dark
