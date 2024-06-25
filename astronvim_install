@@ -1,9 +1,9 @@
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/0xProto.zip
 unzip 0xProto.zip -d ~/.fonts/0xProto
-sudo dnf install neovim ripgrep npm
+sudo dnf install -y neovim ripgrep npm
 sudo dnf copr enable atim/lazygit -y
 sudo dnf copr enable atim/bottom -y
-sudo dnf install lazygit bottom
+sudo dnf install -y lazygit bottom
 curl -L https://github.com/dundee/gdu/releases/latest/download/gdu_linux_amd64.tgz | tar xz
 chmod +x gdu_linux_amd64
 mv gdu_linux_amd64 /usr/bin/gdu
