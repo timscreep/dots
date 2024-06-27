@@ -1,21 +1,11 @@
 ![image](https://github.com/timscreep/dots/assets/81462085/3ad92418-eea9-4fbb-9db1-007433df08d8)
-
-
-
-я перехожу на арч, так как там новая версия Hyprland
+да, я на федоре и что вы мне сделаете?
 ```
-sudo pacman -S git curl flatpak
-reboot
-```
-```
-cd /opt/
 sudo git clone https://github.com/timscreep/dots.git
 sudo chown -R <имя>:<имя> dots
 cd dots
 chmod +x setup
-chmod +x flatpakappssetup
 ./setup
-./flatpakappssetup
 ```
 
 гайс, для установки дровов на карты нвидиа я юзал этот гайд:
