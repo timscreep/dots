@@ -1,10 +1,9 @@
 ![image](https://github.com/timscreep/dots/assets/81462085/3ad92418-eea9-4fbb-9db1-007433df08d8)
 да, я на федоре и что вы мне сделаете?
 ```
-sudo git clone https://github.com/timscreep/dots.git
-sudo chown -R <имя>:<имя> dots
+git clone https://github.com/timscreep/dots.git
 cd dots
-chmod +x setup
+sudo chmod +x setup
 ./setup
 ```
 
