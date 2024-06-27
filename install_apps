@@ -20,3 +20,4 @@ git clone https://github.com/bulletmark/libinput-gestures.git
 cd libinput-gestures
 sudo ./libinput-gestures-setup install
 sudo gpasswd -a $USER input
+gsettings set org.gnome.desktop.wm.preferences button-layout ':'
