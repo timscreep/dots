@@ -1,0 +1,22 @@
+sudo dnf copr enable erikreider/SwayNotificationCenter
+sudo dnf install -y kitty btop pavucontrol hyprland waybar rofi-wayland akmod-nvidia rpmreaper testdisk wmctrl wtype SwayNotificationCenter
+wget https://download.opensuse.org/repositories/openSUSE:/Factory/standard/x86_64/swww-0.9.5-1.1.x86_64.rpm
+sudo dnf install swww-0.9.5-1.1.x86_64.rpm 
+cp -r hypr ~/.config/hypr
+cp -r rofi ~/.config/rofi
+cp -r libinput-gestures.conf ~/.config/
+cp -r waybar/ ~/.config/
+cp -r kitty/ ~/.config/
+cp -r spicetify/ ~/.config/
+chmod +x astronvim_install
+chmod +x cyclews
+sudo cp cyclews /usr/bin/
+chmod +x flatpakappssetup
+./astronvim_install
+./flatpakappssetup
+bash <(curl -sSL https://spotx-official.github.io/run.sh)
+curl -fsSL https://raw.githubusercontent.com/spicetify/spicetify-cli/master/install.sh | sh
+git clone https://github.com/bulletmark/libinput-gestures.git
+cd libinput-gestures
+sudo ./libinput-gestures-setup install
+sudo gpasswd -a $USER input
