@@ -54,7 +54,7 @@ configuration {
 #listview {
     background-color:            transparent;
     columns:                     5;
-    lines:                       3;
+    lines:                       2;
     layout:                      vertical;
     fixed-height:                true;
     fixed-columns:               true;

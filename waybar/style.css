@@ -26,7 +26,7 @@
 @define-color crust #11111b;
 
 window#waybar.bar {
-    background:         @base;
+    background:         @transparent;
     color:              @text;
     font-family:        JetBrainsMonoNL NFM Light;
     border-radius:      0px;
@@ -35,7 +35,6 @@ window#waybar.taskbar {
     background:         none;
     color:              @text;
     font-family:        JetBrainsMonoNL NFM Light;
-    border-radius:      0px;
 }
 
 
@@ -44,41 +43,38 @@ window#waybar.taskbar {
 /* === work spaces === */
 
 #workspaces {
-    min-width:          0px;
+    min-width:          2px;
     background:         @base;
-    padding:            0px 0px 0px 0px;
     font-family:        "JoyPixels";
-    margin:             0px 10px;
+    margin:             0px 0px 0px 4px;
+    border-radius: 10px;
 }
 
 #workspaces button {
-    margin:             0px 0px 0px 0px;
-    padding:            0px 20px 0px 20px;
-    color:              @green;
-    background:         @base;
-    border-width:       2px;
-
-    border-color:       transparent;
+    border-radius:      10px;
     border-style:       solid;
+    border-color: @base;
+    border-width: 2px;
+    margin: 5px 0px 0px 0px; 
+    padding: 0px 5px 0px 5px;
+
 }
+
 
 
 #workspaces button.active {
     color:              @background;
-    background:         @base;
-    border-top-color:   @green;
-    padding-left:       20px;
-    padding-right:      20px;
+    background:         transparent;
+    border-bottom-color:   @green;
 
 }
 
 #workspaces button:hover{
-    border-top-width:   4px;
-    border-radius:      0;
-    border-color:       transparent;
+    border-radius:      10px;
     border-top-color:   @mauve;
     background:         transparent;
     color:              transparent;
+    margin: 0px 0px 2px 0px 
 }
 
 
@@ -86,28 +82,33 @@ window#waybar.taskbar {
 
 
 
-#tray, #clock, #battery {
+#tray, #clock, #battery, #taskbar, #custom-notification {
     min-width:          100px;
     font-size:          15px;
-    background:         @background;
+    background:         @base;
     color:              @foreground;
+    border-width: 2px;
+    border-radius: 10px;
+    margin: 0px 4px 0px 4px;
+
+
 }
+
 
 /* tasksksk bar*/
 #taskbar button {
+    border-color: transparent;
     background:         transparent;
-    padding-left:       10px;
-    padding-right:      9px;
-    border-radius:      0px 0px 0px 0px;
-    border:             0px solid transparent;
     color:              transparent;
+    border-width: 2px;
+    border-style: solid;
+    margin: 5px 0px 0px 0px 
 }
 #taskbar button:hover {
-    padding-left:       10px;
-    padding-right:      9px;
-    border-radius:      0px 0px 0px 0px;
-    border:             0px solid transparent;
-    color:              transparent;
-    border-bottom-width:60px;
-    background:         transparent;
+    border-color: transparent;
+    border-width: 2px;
+    border-radius: 10px;
+    border-top-color:   @mauve;
+    background: transparent;
+    margin: 0px 0px 2px 0px 
 }
