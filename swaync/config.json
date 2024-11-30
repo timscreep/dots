@@ -2,87 +2,82 @@
     "$schema": "/etc/xdg/swaync/configSchema.json",
     "positionX": "right",
     "positionY": "top",
-    "control-center-margin-top": 10,
-    "control-center-margin-bottom": 10,
-    "control-center-margin-right": 10,
-    "control-center-margin-left": 10,
-    "notification-icon-size": 48,
-    "notification-body-image-height": 100,
+    "layer" : "overlay",
+    "layer-shell": true,
+    "notification-icon-size": 32,
+    "notification-body-image-height": 160,
     "notification-body-image-width": 200,
-    "timeout": 5,
+    "control-center-margin-bottom": 200,
+    "control-center-margin-right": 0,
+    "control-center-margin-left": 0,
+    "timeout": 1,
     "timeout-low": 5,
-    "timeout-critical": 20,
+    "timeout-critical": 5,
     "fit-to-screen": true,
-    "control-center-width": 350,
-    "notification-window-width": 350,
+    "control-center-width": 450,
+    "control-center-height": 1000,
+    "notification-window-width": 370,
     "keyboard-shortcuts": true,
     "image-visibility": "when-available",
-    "transition-time": 200,
-    "hide-on-clear": false,
+    "transition-time": 300,
+    "hide-on-clear": true,
     "hide-on-action": true,
     "script-fail-notify": true,
     "widgets": [
         "title",
         "dnd",
         "notifications",
-        "mpris",
+        "buttons-grid",
+    "mpris",
         "volume",
-        "backlight",
-        "buttons-grid"
+        "backlight"
     ],
     "widget-config": {
         "title": {
-            "text": "󰂚  :: Notifications",
+            "text": "Notifications",
             "clear-all-button": true,
-            "button-text": "󰎟 "
+            "button-text": "󰎟"
         },
         "dnd": {
-            "text": "Do Not Disturb"
+            "text": ""
         },
         "label": {
-            "max-lines": 1,
-            "text": "Notification Center"
+            "max-lines": 3,
+            "text": ""
         },
         "mpris": {
-            "image-size": 96,
-            "image-radius": 10
+            "image-size": 200,
+            "image-radius": 12
         },
         "volume": {
-            "label": "󰕾 "
+            "label": " 󰕾 "
         },
         "backlight": {
-            "label": "󰃟 ",
-            "subsystem": "brightnessctl"
+            "label": " 󰃟 "
         },
         "buttons-grid": {
             "actions": [
                 {
-                "label": "WiFi",
-                "type": "toggle",
-                "active": true,
-                "command": "sh -c '[[ $SWAYNC_TOGGLE_STATE == true ]] && nmcli radio wifi on || nmcli radio wifi off'",
-                "update-command": "sh -c '[[ $(nmcli radio wifi) == \"enabled\" ]] && echo true || echo false'"
+                    "label": "",
+                    "command": "nm-connection-editor"
                 },
                 {
-                    "label": "󰴱",
-                    "command": "hyprpicker -a"
+                    "label": "󰊫",
+                    "command": "swaync-client -t && chromium --new-window https://mail.google.com/mail/u/0/#inbox"
                 },
                 {
-                    "label": "󰌵",
-                    "command": "hyprshade toggle dim"
+                    "label": "",
+                    "command": "firefox https://calendar.notion.so/"
                 },
                 {
-                    "label": "󰊠",
-                    "command": "hyprshade toggle grayscale"
+                    "label": "",
+                    "command": "nautilus --new-window"
                 },
                 {
-                    "label": "󰏘",
-                    "command": "hyprshade toggle vibrance"
-                },
-                {
-                    "label": "󰌁",
-                    "command": "hyprshade toggle invert"
+                    "label": "󰂯",
+                    "command": "blueman-manager"
                 }
+
             ]
         }
     }

@@ -1,0 +1,103 @@
+{ 
+    "name": "bar",
+    "height": 30,
+    "layer": "top",
+    "position": "top",
+    "modules-left":["hyprland/workspaces"],
+    "modules-right": ["tray", "custom/notification", "battery", "clock"],
+    "spacing": 0,
+
+     "hyprland/workspaces": {
+
+            "all-outputs": true,
+            "active-only": false,
+            "format": "{icon}",
+          "persistent_workspaces":{
+          "1": [],
+          "2": [],
+          "3": [],
+          "4": [],
+    },
+            "format-icons": {
+                    "1": "🐧",
+                    "2": "🕷",
+                    "3": "🐢",
+                    "4": "🦔",
+                          },},
+       "battery": {
+	    "bat": "BAT1",
+	    "interval": 60,
+	    "states": {
+		  "warning": 30,
+		  "critical": 15
+	              },
+	    "format": "{icon} {capacity}%",
+	    "format-icons": ["󰁺","󰁻","󰁾","󰂀","󰁹"],
+	    "max-length": 25
+               },
+    "clock": {
+            "format": "{:%H:%M}",
+         "tooltip-format": "<tt><big>{calendar}</big></tt>",
+		  "on-click": "swaync-client -t -sw",
+            "calendar": {
+            "timezone": "Europe/Moscow",
+            "format":{ 
+        "months":     "<span color='#ffead3'><b>{}</b></span>",
+			"days":       "<span color='#ecc6d9'><b>{}</b></span>",
+			"weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+			"weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+			"today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+		},
+                        },
+
+              },
+    "custom/button": {
+            "exec": "python3 ~/.config/waybar/scripts/workspaces.py",
+            "on-click": "pkill -SIGUSR1 -f 'waybar -c .config/waybar/config2'",
+              "restart-interval": 1,
+              },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon}  {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+   "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+}
+}
+
+
+
+

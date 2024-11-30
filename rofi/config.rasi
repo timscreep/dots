@@ -26,7 +26,7 @@ configuration {
     
     background-color: @background-color;
     anchor:                      south;
-    location:                    south;
+    location:                    east;
     
     width:                       900px;
     border:           0;
@@ -53,8 +53,8 @@ configuration {
 }
 #listview {
     background-color:            transparent;
-    columns:                     5;
-    lines:                       2;
+    columns:                     2;
+    lines:                       5;
     layout:                      vertical;
     fixed-height:                true;
     fixed-columns:               true;
