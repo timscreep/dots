@@ -43,7 +43,7 @@
     {
       "type": "packages",
       "key": "│    ├──",
-      "format": "{} (dnf)",
+      "format": "{} (rpm)",
       "disabled": ["flatpak", "snap"],
       "keyColor": "blue"
     },
