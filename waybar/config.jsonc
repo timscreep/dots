@@ -3,38 +3,105 @@
     "height": 30,
     "layer": "top",
     "position": "top",
-    "modules-left":["hyprland/workspaces"],
-    "modules-right": ["tray", "custom/notification", "battery", "clock"],
+    "modules-left":["custom/mainmenu","hyprland/workspaces", "custom/workspacebutton"],
+    "modules-right": ["custom/wifi","bluetooth","tray", "custom/notification", "battery", "clock", "custom/power"],
     "spacing": 0,
+    "on-triple-click": "rofi --show drun",
+    "hyprland/workspaces": {
 
-     "hyprland/workspaces": {
-
-            "all-outputs": true,
+            "all-outputs": false,
             "active-only": false,
+            "on-click": "activate",
+            "persistent-workspaces": {
+                    "1": [],
+                    "2": [],
+                    "3": [],
+                    "4": [],
+                                      },
             "format": "{icon}",
-          "persistent_workspaces":{
-          "1": [],
-          "2": [],
-          "3": [],
-          "4": [],
-    },
             "format-icons": {
-                    "1": "🐧",
-                    "2": "🕷",
-                    "3": "🐢",
-                    "4": "🦔",
-                          },},
-       "battery": {
-	    "bat": "BAT1",
-	    "interval": 60,
-	    "states": {
-		  "warning": 30,
-		  "critical": 15
-	              },
-	    "format": "{icon} {capacity}%",
-	    "format-icons": ["󰁺","󰁻","󰁾","󰂀","󰁹"],
-	    "max-length": 25
-               },
+                    "1": "🕷",
+                    "2": "🐢",
+                    "3": "🦔",
+                    "4": "🐧",
+                            },
+ },
+
+  "custom/runcat": {
+     "exec":"~/runcat-tray/runcat-tray",
+     "size": 32,
+},
+    "custom/mainmenu":{
+
+            "format":"",
+            "on-click": "pkill rofi || ~/.config/rofi/scripts/mainmenu.sh",
+                      }, 
+    "custom/workspacebutton":{
+            "format":"󰜯",
+            "tooltip": false,
+             "on-click": "pkill -SIGUSR1 -f 'waybar -c .config/waybar/config2.jsonc'",
+                       },
+"bluetooth": {
+    "format": "󰂰",
+    "format-disabled": "󰂲",
+    "format-connected": "󰂱",
+    "format-connected-battery": "󰂱",
+
+    "tooltip-format": 
+      "{num_connections} connected",
+    "tooltip-format-disabled": 
+      "Bluetooth Disabled",
+    "tooltip-format-connected": 
+      "{num_connections} connected\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": 
+      "{device_alias}",
+    "tooltip-format-enumerate-connected-battery": 
+      "{device_alias}: {device_battery_percentage}%",
+
+    "on-click": "pkill rofi || ~/.config/rofi/scripts/bluetooth-menu.sh",
+    "interval": 1,
+    "min-length": 1,
+    "max-length": 1
+  },
+
+  "custom/wifi": {
+    "exec": "~/.config/waybar/scripts/wifi-status.sh",
+    "return-type": "json",
+    "format": "{}",
+    "tooltip": true,
+    "on-click": "pkill rofi || ~/.config/rofi/scripts/wifi-menu.sh",
+    "interval": 1,
+    "min-length": 1,
+    "max-length": 1
+  },
+ "battery": {
+    "bat":"BAT1",
+    "states": {
+      "full": 100,
+      "good": 99,
+      "warning": 30,
+      "critical": 15
+    },
+
+    "format": "{icon} {capacity}%",
+    "format-icons": ["󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂"],
+    "format-full": "󱃌 {capacity}%",
+    "format-warning": "󰁻 {capacity}%",
+    "format-critical": "󱃍 {capacity}%",
+    "format-charging": "󱘖 {capacity}%",
+
+    "tooltip-format": "Discharging: {time}",
+    "tooltip-format-charging": "Charging: {time}",
+    "interval": 1,
+    "min-length": 6,
+    "max-length": 6
+  }, 
+  "custom/power": {
+    "format": " ",
+    "tooltip": false,
+    "on-click": "pkill rofi || ~/.config/rofi/scripts/logout-menu.sh"
+  },
+
     "clock": {
             "format": "{:%H:%M}",
          "tooltip-format": "<tt><big>{calendar}</big></tt>",
@@ -51,31 +118,9 @@
                         },
 
               },
-    "custom/button": {
-            "exec": "python3 ~/.config/waybar/scripts/workspaces.py",
-            "on-click": "pkill -SIGUSR1 -f 'waybar -c .config/waybar/config2'",
-              "restart-interval": 1,
               },
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon}  {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
-    },
-   "custom/notification": {
+
+      "custom/notification": {
     "tooltip": false,
     "format": "{icon}",
     "format-icons": {
@@ -94,7 +139,7 @@
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
     "escape": true
-  },
+  }, 
 }
 }
 

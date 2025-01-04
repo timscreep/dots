@@ -12,18 +12,16 @@
 
 
 .modules-left {
-    font-family:     "FiraCode, JoyPixels";
+    font-family:     "JoyPixels";
     font-size:      15px;
 }
 
 .modules-center {
-    font-family:    "FiraCode, JoyPixels";
     font-size:      15px;
 }
 
 .modules-right {
-    font-family:    "FiraCode";
-    font-size:      12px;
+    font-size:      15px;
 }
 
 
@@ -93,10 +91,12 @@ window#waybar {
 	color: @background;
 }
 
-
-#tray, #clock, #custom-notification, #battery{
-  min-width: 100px;
-    font-size: 15px;
+#custom-runcat{
+    font-family:"waycat"
+}
+#custom-runcat, #custom-workspacebutton,#custom-updates,#custom-mainmenu,#custom-wifi, #bluetooth, #custom-power, #tray, #clock, #custom-notification, #battery{
+    min-width: 100px;
+    font-size: 20px;
     background: @background;
     color: @foreground;
 
@@ -106,10 +106,3 @@ window#waybar {
   border-radius: 12px;
 
 }
-
-
-#clock{
-    margin-right: 10px;
-}
-
-
