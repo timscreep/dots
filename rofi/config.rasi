@@ -1,12 +1,11 @@
-
+@import "~/.config/rofi/default.rasi"
 configuration {
     show-icons:      true;
-    
     disable-history: false;
 }
 
+
 * {
-    font: "JetBrainsMonoNL NFM Light 12";
     foreground: #cdd6f4;
     background-color:  rgba(30, 30, 46, 0.9);
     active-background: #1e1e2e;
@@ -23,12 +22,11 @@ configuration {
 
 #window {
     transparency:                "real";
-    
     background-color: @background-color;
     anchor:                      south;
     location:                    east;
-    
-    width:                       900px;
+    width:                       100%;
+    height:                      100%;
     border:           0;
     border-radius:    6;
     border-color:     @bordercolor;
@@ -37,7 +35,6 @@ configuration {
 
 #mainbox {
     background-color:            transparent;
-
     border:  0;
     padding: 0;
     spacing:                     20px;
@@ -53,7 +50,7 @@ configuration {
 }
 #listview {
     background-color:            transparent;
-    columns:                     2;
+    columns:                     8;
     lines:                       5;
     layout:                      vertical;
     fixed-height:                true;
@@ -62,7 +59,7 @@ configuration {
     border:       0px;
     border-color: @bordercolor;
     spacing:      2px ;
-    scrollbar:    false;
+    scrollbar:    true;
     padding:      2px 0px 0px ;
     dynamic:                     true;
     
@@ -108,7 +105,7 @@ element-text {
 #element.selected.normal {
     background-color:            transparent;
     text-color:       @foreground;
-                border:                     2px;
+    border:                     2px;
     border-color: @bordercolor;
 }
 #element.selected.urgent {
@@ -116,6 +113,7 @@ element-text {
     text-color:       @foreground;
 }
 #element.selected.active {
+    width: 200px;
     background-color:            transparent;
     text-color:       @foreground;
 
@@ -151,12 +149,9 @@ element-text {
     text-color: @foreground;
     background-color: transparent;
     placeholder: "Search";
-    
-
 }
 
 #textbox {
-
     content:"🔍 ";
     expand: false;
 }
