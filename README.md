@@ -6,7 +6,7 @@ cd dots
 sudo chmod +x setup
 ./setup
 ```
-
+чуточку арча:
 гайс, для установки дровов на карты нвидиа я юзал этот гайд:
 https://github.com/korvahannu/arch-nvidia-drivers-installation-guide
 у меня просто были недопонимания по поводу хуков, здесь написано кратко, но это работает.
