@@ -27,3 +27,8 @@ curl -fsSL https://raw.githubusercontent.com/spicetify/spicetify-cli/master/inst
 echo 'on' > '/sys/bus/pci/devices/0000:01:00.0/power/control'
 ```
 
+установка hyprspace
+```
+hyprpm add https://github.com/KZDKM/Hyprspace
+hyprpm enable Hyprspace
+```
