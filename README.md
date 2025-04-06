@@ -26,6 +26,10 @@ curl -fsSL https://raw.githubusercontent.com/spicetify/spicetify-cli/master/inst
 ```
 echo 'on' > '/sys/bus/pci/devices/0000:01:00.0/power/control'
 ```
+```
+sudo cp -r catppuccin-mocha-mauve-standard+default/ /usr/share/themes/
+gsettings set org.gnome.desktop.wm.preferences theme "catppuccin-mocha-mauve-standard+default"
+```
 
 установка hyprspace
 ```
