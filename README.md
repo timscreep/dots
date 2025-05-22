@@ -29,6 +29,7 @@ echo 'on' > '/sys/bus/pci/devices/0000:01:00.0/power/control'
 ```
 sudo cp -r catppuccin-mocha-mauve-standard+default/ /usr/share/themes/
 gsettings set org.gnome.desktop.interface gtk-theme "catppuccin-mocha-mauve-standard+default"
+gsettings set org.gnome.desktop.wm.preferences button-layout ""
 ```
 
 установка hyprspace
