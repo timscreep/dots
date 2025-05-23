@@ -1,4 +1,7 @@
-![image](https://github.com/timscreep/dots/assets/81462085/3ad92418-eea9-4fbb-9db1-007433df08d8)
+![image](https://github.com/user-attachments/assets/becd24bb-2087-4f82-b3b9-deeedbd8e351)
+
+![image](https://github.com/user-attachments/assets/be2ba6fe-0413-4338-91f1-48f558b675c0)
+
 да, я на федоре и что вы мне сделаете?
 ```
 git clone https://github.com/timscreep/dots.git
