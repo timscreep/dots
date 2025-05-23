@@ -148,7 +148,19 @@
       "format": "{3}",
       "keyColor": "green"
     },
-
+    {
+      "type": "battery",
+      "key": "├BAT─╮",
+      "format": "{4}",
+      "keyColor": "green"
+    },
+      {
+      "type": "battery",
+      "key": "│    ╰──",
+      "format": "{?12}{12} hours and {13} minutes{?}{/12}{?5}Charging{?}{/}",
+      "keyColor": "green"
+    },
+       
     "break",
     {
       "type": "colors",
