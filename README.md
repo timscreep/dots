@@ -2,6 +2,13 @@
 
 ![image](https://github.com/user-attachments/assets/be2ba6fe-0413-4338-91f1-48f558b675c0)
 
+
+
+Софт, который использую:
+Обои: [Waytrogen](https://github.com/nikolaizombie1/waytrogen) и [swww](https://github.com/LGFae/swww)
+
+
+
 да, я на федоре и что вы мне сделаете?
 ```
 git clone https://github.com/timscreep/dots.git
