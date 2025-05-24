@@ -6,7 +6,7 @@
 
 Софт, который использую:
 Обои: [Waytrogen](https://github.com/nikolaizombie1/waytrogen) и [swww](https://github.com/LGFae/swww)
-
+Модуль waybar: [polycat](https://github.com/2IMT/polycat)
 
 
 да, я на федоре и что вы мне сделаете?
