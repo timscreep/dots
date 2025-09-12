@@ -1,16 +1,5 @@
-@define-color background #1e1e2e;
-@define-color current_line #313244;
-@define-color foreground #cdd5f4;
-@define-color comment #6272A4;
-@define-color green #25d865;
-@define-color orange #FFB86C;
-@define-color pink #FF79C6;
-@define-color purple #BD93F9;
-@define-color lavander #b4befe;
-@define-color cyan2 #43ff64;
-
-
-
+@import "mocha.css";
+@define-color background rgba(0,0,0,0.3); 
 .modules-left {
     font-family:     "JoyPixels";
     font-size:      15px;
@@ -23,13 +12,36 @@
 .modules-right {
     font-size:      15px;
 }
-
-
-
-
+window#waybar.battery-purple{
+    color: @mauve;
+    border-color: @mauve;
+}
+window#waybar.battery-blue{
+    color: @blue;
+    border-color: @blue;
+}
+window#waybar.battery-cyan{
+    color: @sky;
+    border-color: @sky;
+}
+window#waybar.battery-green{
+    color: @green;
+    border-color: @green;
+}
+window#waybar.battery-yellow{
+    color: @yellow;
+    border-color: @yellow;
+}
+window#waybar.battery-orange{
+    color: @peach;
+    border-color: @peach;
+}
+window#waybar.battery-red{
+    color: @red;
+    border-color: @red;
+}
 window#waybar {
     background: none;
-    color: black;
 
 
 }
@@ -41,7 +53,6 @@ window#waybar {
     min-width: 0px;
     background:         @background;
     padding:            0px 0px 0px 0px;
-    border-color: @lavander;
     border-width: 2px;
     border-style: solid;
     border-radius: 12px;
@@ -51,14 +62,12 @@ window#waybar {
     margin:             0px 0px 0px 0px;
     padding:            0px 20px 0px 20px;
     border-radius: 12px;
-    color:              @foreground;
     background:         @background;
 }
 
 
 
 #workspaces button:hover {
-    color:              @white;
     background:         @current_line;
     border-radius:      12px;
     box-shadow:         none;
@@ -66,7 +75,6 @@ window#waybar {
 }
 
 #workspaces button.persistent {
-    color:              @white;
     background:         @background;
     border-radius:      12px;
     border-color: @background;
@@ -78,7 +86,6 @@ window#waybar {
 }
 
 #workspaces button.active {
-    color:              @foreground;
     background:         @current_line;
     border-radius:      12px;
     padding-left: 20px;
@@ -88,21 +95,23 @@ window#waybar {
 
 
 #custom-notification {
-	color: @background;
 }
 
-#custom-runcat{
-    font-family:"waycat"
+#custom-polycat{
+
+    font-family:"polycat";
 }
-#custom-runcat, #custom-workspacebutton,#custom-updates,#custom-mainmenu,#custom-wifi, #bluetooth, #custom-power, #tray, #clock, #custom-notification, #battery{
+
+
+#custom-polycat, #custom-clock,#custom-vless-proxy,#custom-mainmenu,#custom-wifi, #bluetooth, #custom-power, #tray, #clock, #custom-notification, #battery{
     min-width: 100px;
     font-size: 20px;
     background: @background;
-    color: @foreground;
 
-  border-color: @lavander;
-  border-width: 2px;
-  border-style: solid;
-  border-radius: 12px;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 12px;
 
 }
+
+
