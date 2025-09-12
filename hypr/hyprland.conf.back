@@ -11,7 +11,7 @@ workspace = s[true], gapsout:20
 windowrulev2 = float, workspace:s[true]
 windowrulev2 = float, onworkspace:s[true]
 windowrulev2 = workspace special:rspace, class:^(Spotify)$
-windowrulev2 = workspace special:qspace, class:^(org.telegram.desktop)$
+
 windowrule = float, class:^(org.telegram.desktop)$
 
 exec-once = /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -226,7 +226,7 @@ bind = $mainMod SHIFT, 4, movetoworkspace, 4
 # Telegram show-hide
 bind = $mainMod, Q, togglespecialworkspace, qspace
 bind = $mainMod SHIFT, Q, movetoworkspace, special:qspace
-bind = $mainMod, W, togglespecialworkspace, 
+bind = $mainMod, W, togglespecialworkspace,
 bind = $mainMod SHIFT, W, movetoworkspace, special:wspace
 bind = $mainMod, E, togglespecialworkspace, espace
 bind = $mainMod SHIFT, E, movetoworkspace, special:espace
